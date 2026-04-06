@@ -1,0 +1,203 @@
+/* Base y Estilos Generales*/
+* { /* Aplicar un reset básico para evitar inconsistencias entre navegadores */
+    box-sizing: border-box;  /* Asegura que el padding y border no afecten al tamaño total de los elementos */
+    margin: 0; /* Elimina el margen por defecto de todos los elementos */
+    padding: 0; /* Elimina el padding por defecto de todos los elementos */
+}
+
+body { /* Estilos generales para el cuerpo de la página */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente y legible */
+    background: #0a0e14; /* Un negro azulado muy sutil para el fondo */
+    color: #e0e6ed; /* Blanco azulado para el texto general, más suave que el blanco puro */
+}
+
+/* Navegación y Encabezado */
+header { 
+    background: #101622; /* Fondo de header oscuro */
+    padding: 25px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    border-bottom: 2px solid #0c3f76; /* Línea divisoria en azul vibrante */
+}
+ 
+header h1 {/* Título principal del header */
+    color: #13a2bf; /* Azul cian brillante para el título principal */
+    text-transform: uppercase; 
+    letter-spacing: 3px; /* Espaciado entre letras */
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* Efecto neón */
+}
+
+nav { /* Estilos para la navegación */
+    background: #470db3; /* Fondo de navegación en morado */
+    padding: 12px; /* Espaciado interno */
+    position: sticky; /* Hace que la navegación se mantenga fija en la parte superior */
+    top: 0; /* Asegura que esté en la parte superior */
+    z-index: 100; /* Asegura que la navegación esté por encima de otros elementos */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+}
+
+nav ul { /* Estilos para la lista de navegación */
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos de navegación */
+    gap: 30px; /* Espacio entre los elementos de navegación */
+}
+
+/*  PARA ENLACES  */
+a {/* Estilos para los enlaces */
+    color: #82b1ff; /* Azul claro suave por defecto para enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    transition: all 0.3s ease; /* Transición suave para todos los efectos */
+}
+
+a:hover { /* Efecto al pasar el mouse sobre los enlaces */
+    color: #00d4ff; /* Azul cian brillante al pasar el mouse */
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.8);/* Efecto de resplandor al pasar el mouse */
+}
+
+/* Estilo específico para enlaces del menú */
+nav a {/* Estilos específicos para los enlaces dentro de la navegación */
+    font-weight: bold;/* Hace que los enlaces del menú sean más destacados */
+    color: #e0e6ed; /* Texto del menú en blanco azulado */
+}
+
+nav a:hover {/* Efecto al pasar el mouse sobre los enlaces del menú */
+    color: #00d4ff;/* Azul cian brillante al pasar el mouse sobre los enlaces del menú */
+}
+
+/* Página Principal*/
+.grid-videos {/* Estilos para el contenedor de videos en la página principal */
+    display: grid;/* Usa CSS Grid para organizar los videos en una cuadrícula */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));/* Crea columnas que se ajustan automáticamente al tamaño del contenedor, con un mínimo de 280px */
+    gap: 25px;/* Espacio entre las tarjetas de video */
+    padding: 30px;/* Espaciado interno alrededor de la cuadrícula */
+}
+
+.grid-videos article { /* Estilos para cada tarjeta de video */
+    background: #141b29; /* Fondo de tarjeta oscuro */
+    padding: 15px; /* Espaciado interno de la tarjeta */
+    border-radius: 10px; /* Bordes redondeados para un aspecto más suave */
+    border: 1px solid #23304a; /* Borde sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;/* Transición suave para transformaciones y sombras */
+}
+
+.grid-videos article:hover { /* Efecto al pasar el mouse sobre cada tarjeta de video */
+    transform: translateY(-8px); /* Eleva la tarjeta */
+    background: #1a2335; /* Fondo ligeramente más claro al pasar el mouse */
+    border-color: #007bff; /* El borde se vuelve azul vibrante */
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2); /* Sombra azul */
+}
+
+.grid-videos img { /* Estilos para las miniaturas de los videos en la cuadrícula */
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: 160px; /* Altura fija para las miniaturas */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionar */
+    border-radius: 8px; /* Bordes redondeados para las miniaturas */
+    margin-bottom: 12px; /* Espacio debajo de la imagen */
+    border: 1px solid #23304a;/* Borde sutil para las miniaturas */
+}
+
+/* Títulos de los videos en el Grid */
+.grid-videos article h3 { /* Estilos para los títulos de los videos en la cuadrícula */
+    margin-top: 10px;/* Espacio entre la imagen y el título */
+    color: #00d4ff; /* Azul cian para los nombres */
+    font-size: 1.1rem;/* Tamaño de fuente ligeramente más grande para los títulos */
+    font-weight: 600;/* Un poco más de peso para destacar los títulos */
+}
+
+.grid-videos article p {/* Estilos para las descripciones de los videos en la cuadrícula */
+    color: #94a3b8; /* Gris azulado para la descripción */
+    font-size: 0.9rem;/* Tamaño de fuente más pequeño para la descripción */
+    margin-top: 5px;/* Espacio entre el título y la descripción */
+}
+
+/*Layout de Reproducción*/
+.reproductor-flex { /* Contenedor principal para la página de reproducción de video */
+    display: flex; /* Usa Flexbox para organizar el video principal y la sección de sugeridos */
+    gap: 25px; /* Espacio entre el video principal y la sección de sugeridos */
+    padding: 30px; /* Espaciado interno alrededor del contenido */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas más pequeñas */
+}
+
+.col-video { /* Contenedor para el video principal y su título */
+    flex: 3; /* El video principal ocupa más espacio que la sección de sugeridos */
+    min-width: 300px; /* Asegura que el video no se vuelva demasiado pequeño en pantallas pequeñas */
+}
+
+.main-video { /* Estilos para el video principal */
+    width: 100%; /* El video ocupa todo el ancho del contenedor */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    border-radius: 12px; /* Bordes redondeados para el video principal */
+    background: #000; /* Fondo negro para el video principal */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);/* Sombra para el video principal */
+    border: 2px solid #141b29; /* Borde sutil para el video principal */
+}
+
+/* Ajuste del título del video actual */
+.col-video h2 {/* Título del video principal */
+    color: #00d4ff; /* Azul cian para el título */
+    margin-top: 15px;/* Espacio entre el video y el título */
+    font-size: 1.5rem;/* Tamaño de fuente para el título */
+}
+
+.col-sugeridos { /* Contenedor para la sección de videos sugeridos */
+    flex: 1;    /* El contenedor de sugeridos ocupa el espacio restante */
+    min-width: 280px;  /* Ancho mínimo para la sección de sugeridos */
+    background: #141b29; /* Fondo para la sección de sugeridos */
+    padding: 20px; /* Espaciado interno para la sección de sugeridos */
+    border-radius: 10px; /* Bordes redondeados para la sección de sugeridos */
+    border: 1px solid #23304a;/* Borde sutil para la sección de sugeridos */
+}
+
+.col-sugeridos h3 {/* Título para la sección de videos sugeridos */
+    color: #e0e6ed;/* Blanco azulado para el título de sugeridos */
+    font-size: 1.25rem;/* Tamaño de fuente para el título de sugeridos */
+    margin-bottom: 20px;/* Espacio debajo del título de sugeridos */
+    border-bottom: 1px solid #007bff;/* Línea divisoria azul debajo del título de sugeridos */
+    padding-bottom: 10px;/* Espacio entre el título y la línea divisoria */
+}
+
+/* Tarjetas pequeñas (Sugeridos)*/
+.mini-card { 
+    display: flex; /* Usa Flexbox para organizar la miniatura y el título del video sugerido */
+    gap: 12px; /* Espacio entre la miniatura y el título del video sugerido */
+    margin-bottom: 18px; /* Espacio entre cada tarjeta de video sugerido */
+    border-bottom: 1px solid #23304a; /* Línea divisoria sutil entre cada tarjeta de video sugerido */
+    padding-bottom: 10px; /* Espacio entre la tarjeta y la línea divisoria */
+}
+
+.mini-card img { /* Estilos para las miniaturas de los videos sugeridos */
+    width: 110px; /* Ancho fijo para las miniaturas de los videos sugeridos */
+    height: 65px; /* Altura fija para las miniaturas de los videos sugeridos */
+    border-radius: 6px; /* Bordes redondeados para las miniaturas de los videos sugeridos */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionar */
+    border: 1px solid #23304a;/* Borde sutil para las miniaturas de los videos sugeridos */
+}
+
+.mini-card a { /* Estilos para los enlaces de los títulos de los videos sugeridos */
+    color: #e0e6ed; /* Texto blanco azulado */
+    font-size: 0.95rem; /* Tamaño de fuente para los títulos de los videos sugeridos */
+    display: flex; /* Usa Flexbox para alinear el texto verticalmente con la miniatura */
+    align-items: center; /* Alinea el texto verticalmente con la miniatura */
+    font-weight: 500;/* Peso de fuente para los títulos de los videos sugeridos */
+}
+
+.mini-card a:hover { /* Efecto al pasar el mouse sobre los títulos de los videos sugeridos */
+    color: #00d4ff; /* Azul cian brillante al pasar el mouse sobre los títulos de los videos sugeridos */
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.8); /* Efecto de resplandor al pasar el mouse sobre los títulos de los videos sugeridos */
+}
+
+/* Footer */
+footer { /* Estilos para el pie de página */
+    text-align: center; /* Centra el texto en el pie de página */
+    padding: 40px; /* Espaciado interno para el pie de página */
+    background: #101622; /* Fondo oscuro para el pie de página */
+    margin-top: 30px; /* Espacio entre el contenido principal y el pie de página */
+    font-size: 0.85rem; /* Tamaño de fuente más pequeño para el pie de página */
+    border-top: 2px solid #007bff;/* Línea divisoria azul en la parte superior del pie de página */
+    color: #94a3b8;/* Gris azulado para el texto del pie de página */
+}
+
+/* Un toque extra para resaltar tu nombre en el footer */
+footer strong {
+    color: #00d4ff;
+}
